@@ -376,8 +376,9 @@
   <script>
     const country_codes = "<%= countries %>".split(",") 
     console.log(typeof ("<%= countries %>"))
+    console.log(country_codes);
     country_codes.forEach(code => {
-      document.getElementById(code).style.fill = 'teal'
+      document.getElementById(code).style.fill = 'teal';
     });
 
   </script>

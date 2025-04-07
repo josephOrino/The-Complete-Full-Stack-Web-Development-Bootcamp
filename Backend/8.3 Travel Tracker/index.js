@@ -30,6 +30,7 @@ async function checkVisisted() {
 // GET home page
 app.get("/", async (req, res) => {
   const countries = await checkVisisted();
+  console.log(countries);
   res.render("index.ejs", { countries: countries, total: countries.length });
 });
 
