@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post</title>
+</head>
+<body>
+    <h1>Adding of blog</h1>
+    <form action="/add" method="POST">
+        <input type="text" name="id" style="display: none;">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="author" placeholder="Author">
+        <textarea type="text" name="story" placeholder="Story"></textarea>
+        <input type="submit" value="OK">
+    </form>
+    <h1>Added blogs:</h1>
+    <% if (locals.stories) { %>
+        <% stories.forEach(element => { %>
+            <div id="<%= element.id %>">
+                <h2> <%= element.title %> </h2>
+                <em> <%= element.author %> </em>
+                <p> <%= element.story %> </p>
+                <button>Edit</button>
+            </div>
+        <% }); %>
+    <% } else { %>
+        <h2>Here are the stories.</h2>
+    <% } %>
+</body>
+</html>
